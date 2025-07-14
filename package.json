@@ -1,23 +1,23 @@
 {
-  "name": "ui-web-scraper-demo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^17.2.0",
-    "mongoose": "^8.16.3",
-    "playwright": "^1.54.1"
-  },
-  "devDependencies": {
-    "@types/node": "^24.0.13",
-    "prettier": "^3.6.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  }
+    "name": "ui-web-scraper-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start-scraper": "ts-node src/index.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^17.2.0",
+        "mongoose": "^8.16.3",
+        "playwright": "^1.54.1"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.13",
+        "prettier": "^3.6.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3"
+    }
 }
