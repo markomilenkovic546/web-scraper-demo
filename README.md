@@ -41,6 +41,16 @@ This class contains high-level scraping flow:
 - `scrapeURLs(page)` – Gathers URLs of individual product detail pages
 - `scrapeProducts(page, urls)` – Visits each URL and scrapes fields such as title, price, availability, description, etc.
 
+### Database Client
+
+The `DatabaseClient` class is dedicated to managing the database connection lifecycle. It encapsulates logic for connecting to and disconnecting from MongoDB, isolating these concerns from the rest of the application.
+
+---
+
+### Product Service
+
+The `ProductService` class handles the business logic related to products, such as inserting or updating scraped product data in the database. It interacts directly with the data models to perform these operations.
+
 ---
 
 ### Page Object Model (POM)
