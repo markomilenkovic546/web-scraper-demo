@@ -50,7 +50,7 @@ export default class BooksScraper {
         const scrapeSingleProduct = async (url: string) => {
             let response;
             try {
-                response = await page.goto(url + '21');
+                response = await page.goto(url);
                 await page.waitForTimeout(1000);
                 await page.waitForLoadState('networkidle');
 
