@@ -1,0 +1,39 @@
+name: Products Scraping
+
+on:
+    workflow_dispatch:
+    
+    schedule:
+    - cron: '0 2 * * 1'
+
+jobs:
+    scrape-products:
+        timeout-minutes: 60
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
+
+            - name: Install Yarn
+              run: npm install -g yarn
+
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+
+            - name: Install Playwright Browsers
+              run: yarn playwright install --with-deps
+
+            - name: Create .env file
+              run: |
+                  echo "BASE_URL=${{ secrets.BASE_URL }}" > .env
+                  echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> .env
+
+            - name: Scrape Products
+              run: yarn start-scraper
+
+            
